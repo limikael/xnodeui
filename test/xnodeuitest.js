@@ -3,13 +3,65 @@ var xnodeui = require("../src/xnodeui");
 
 $(document).ready(function() {
 
-	var b=new xnodeui.Button();
-	document.body.appendChild(b);
+	var d = new xnode.Div();
 
-/*	var e=new xnode.Div();
-	e.innerHTML="hello";
-	document.body.appendChild(e);*/
+	d.style.position = "absolute";
+	d.style.left = "10px";
+	d.style.right = "10px";
+	d.style.top = "10px";
+	d.style.bottom = "100px";
+	document.body.appendChild(d);
 
-//	console.log("hello");
+	/* var a = new xnodeui.Accordion();
+	a.appendChild(new xnode.Div("hello"));
+	a.appendChild(new xnode.Div("some content...<br/>blalabl"));
+	a.appendChild(new xnode.Div("hello 2"));
+	a.appendChild(new xnode.Div("some more content...<br/>blalabl and so on...<br/>blalabl and so on...<br/>blalabl and so on...<br/>"));
 
+	a.option("heightStyle", "fill");
+	a.option("collapsible", false);
+
+	d.appendChild(a);
+	a.jqueryElement.accordion("refresh");*/
+
+	/*var t = new xnodeui.Tabs();
+
+	t.style.position = "absolute";
+	t.style.height = "100%";
+	t.style.left = "0";
+	t.style.right = "0";
+
+	//var ul=new xnode.Ul();
+	t.ul.appendChild(new xnode.Li("<a href='#fragment1'><span>test</span></a>"));
+	t.ul.appendChild(new xnode.Li("<a href='#fragment2'><span>test</span></a>"));
+
+	var c;
+	c = new xnode.Div("hello");
+	c.id = "fragment1";
+	t.appendChild(c);
+
+	c = new xnode.Div("hello again");
+	c.id = "fragment2";
+	t.appendChild(c);
+
+	t.jqueryElement.tabs("refresh");
+	d.appendChild(t);
+
+	t.option("active", 1);*/
+
+	var b = new xnodeui.Button("hello");
+
+	//	b.innerHTML="hello";
+
+	b.label = "Hello";
+/*	console.log("label: " + b.label);
+
+	b.disabled = true;*/
+
+	//	b.disable();
+
+	//	console.log(b.label);
+	//	b.label="Hello world";
+	//	b.option("label", "hello");
+	d.appendChild(b);
 });
