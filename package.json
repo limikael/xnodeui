@@ -1,0 +1,30 @@
+{
+  "name": "xnodeui",
+  "version": "0.0.1",
+  "description": "",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "xnode": "^0.0.1"
+  },
+  "devDependencies": {
+    "async": "^0.9.0",
+    "browserify": "^6.3.2",
+    "fs-extra": "^0.12.0",
+    "grunt": "^0.4.5",
+    "inherits": "^2.0.1",
+    "qsub": "^0.0.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/limikael/xnodeui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/limikael/xnodeui/issues"
+  },
+  "homepage": "https://github.com/limikael/xnodeui"
+}

@@ -3,9 +3,11 @@ var inherits = require("inherits");
 var xnodeui = {};
 
 xnodeui.Button = function() {
+	xnode.Button.call(this);
 
+	$(this.node).button({label: "hello"});
 }
 
-inherits(Button, xnode.Div);
+inherits(xnodeui.Button, xnode.Button);
 
 module.exports = xnodeui;
