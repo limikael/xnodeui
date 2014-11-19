@@ -49,7 +49,7 @@ $(document).ready(function() {
 
 	t.option("active", 1);*/
 
-	var b = new xnodeui.Button("hello");
+	var b = new xnodeui.Button();
 
 	//	b.innerHTML="hello";
 
@@ -64,4 +64,22 @@ $(document).ready(function() {
 	//	b.label="Hello world";
 	//	b.option("label", "hello");
 	d.appendChild(b);
+
+	var s=new xnodeui.Slider();
+
+	s.on("slide",function() {
+		console.log("slidechange");
+	})
+
+/*	s.jqueryElement.on("slidechange",function() {
+		console.log("change");
+	});*/
+
+/*	s.on("change",function() {
+		console.log("change");
+	});*/
+
+	d.appendChild(s);
+
+
 });

@@ -19,6 +19,30 @@ function XNodeUIBaseWidget(jqueryuiType, content) {
 inherits(XNodeUIBaseWidget, xnode.Div);
 
 /**
+ * Override addEventListener to also listen for component events.
+ * @method addEventListener
+ */
+XNodeUIBaseWidget.prototype.addEventListener = function(e, f) {
+	xnode.Div.prototype.addEventListener.call(this, e, f);
+	this.jqueryElement.on(e, f);
+}
+
+/**
+ * Override removeEventListener to also stop listening for component events.
+ * @method removeEventListener
+ */
+XNodeUIBaseWidget.prototype.removeEventListener = function(e, f) {
+	xnode.Div.prototype.removeEventListener.call(this, e, f);
+	this.jqueryElement.off(e, f);
+}
+
+/*
+ * Event listener function aliases.
+ */
+XNodeUIBaseWidget.prototype.on = XNodeUIBaseWidget.prototype.addEventListener;
+XNodeUIBaseWidget.prototype.off = XNodeUIBaseWidget.prototype.removeEventListener;
+
+/**
  * Create a class that extends a jquery ui widget.
  * @method createExtendedXNodeUIElement
  */
@@ -106,9 +130,11 @@ createXNodeUIMethod(xnodeui.Slider, "disable");
 createXNodeUIMethod(xnodeui.Slider, "enable");
 createXNodeUIMethod(xnodeui.Slider, "instance");
 createXNodeUIMethod(xnodeui.Slider, "option");
-/*createXNodeUIMethod(xnodeui.Slider, "value");
-createXNodeUIMethod(xnodeui.Slider, "values");*/
 createXNodeUIMethod(xnodeui.Slider, "widget");
+
+// These shadows properties, so let's leave them out.
+//createXNodeUIMethod(xnodeui.Slider, "value");
+//createXNodeUIMethod(xnodeui.Slider, "values");
 
 /**
  * Accordion class.
@@ -129,16 +155,6 @@ inherits(xnodeui.Accordion, XNodeUIBaseWidget);
 }
 
 inherits(xnodeui.Button, XNodeUIBaseWidget);*/
-
-/**
- * Slider class.
- * @class xnodeui.Slider
- */
-xnodeui.Slider = function() {
-	XNodeUIBaseWidget.call(this, "slider");
-}
-
-inherits(xnodeui.Slider, XNodeUIBaseWidget);
 
 /**
  * Tabs class.
