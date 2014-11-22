@@ -79,6 +79,69 @@ function createXNodeUIMethod(cls, methodName) {
 }
 
 /**
+ * Accordion class.
+ * @class Accordion
+ */
+xnodeui.Accordion = createExtendedXNodeUIElement("accordion");
+
+createXNodeUIProperty(xnodeui.Accordion, "active");
+createXNodeUIProperty(xnodeui.Accordion, "animate");
+createXNodeUIProperty(xnodeui.Accordion, "collapsible");
+createXNodeUIProperty(xnodeui.Accordion, "disabled");
+createXNodeUIProperty(xnodeui.Accordion, "event");
+createXNodeUIProperty(xnodeui.Accordion, "header");
+createXNodeUIProperty(xnodeui.Accordion, "heightStyle");
+createXNodeUIProperty(xnodeui.Accordion, "icons");
+
+createXNodeUIMethod(xnodeui.Accordion, "destroy");
+createXNodeUIMethod(xnodeui.Accordion, "disable");
+createXNodeUIMethod(xnodeui.Accordion, "enable");
+createXNodeUIMethod(xnodeui.Accordion, "instance");
+createXNodeUIMethod(xnodeui.Accordion, "option");
+createXNodeUIMethod(xnodeui.Accordion, "refresh");
+createXNodeUIMethod(xnodeui.Accordion, "widget")
+
+/**
+ * Autocomplete class.
+ * @class Autocomplete
+ */
+xnodeui.Autocomplete = createExtendedXNodeUIElement("autocomplete");
+
+createXNodeUIProperty(xnodeui.Autocomplete, "appendTo");
+createXNodeUIProperty(xnodeui.Autocomplete, "autoFocus");
+createXNodeUIProperty(xnodeui.Autocomplete, "delay");
+createXNodeUIProperty(xnodeui.Autocomplete, "disabled");
+createXNodeUIProperty(xnodeui.Autocomplete, "minLength");
+createXNodeUIProperty(xnodeui.Autocomplete, "position");
+createXNodeUIProperty(xnodeui.Autocomplete, "source");
+
+createXNodeUIMethod(xnodeui.Autocomplete, "close");
+createXNodeUIMethod(xnodeui.Autocomplete, "destroy");
+createXNodeUIMethod(xnodeui.Autocomplete, "disable");
+createXNodeUIMethod(xnodeui.Autocomplete, "enable");
+createXNodeUIMethod(xnodeui.Autocomplete, "instance");
+createXNodeUIMethod(xnodeui.Autocomplete, "option");
+createXNodeUIMethod(xnodeui.Autocomplete, "search")
+createXNodeUIMethod(xnodeui.Autocomplete, "widget")
+
+/**
+ * Buttonset class.
+ * @class xnodeui.Buttonset
+ */
+xnodeui.Buttonset = createExtendedXNodeUIElement("buttonset", xnode.Div);
+
+createXNodeUIProperty(xnodeui.Buttonset, "disabled");
+createXNodeUIProperty(xnodeui.Buttonset, "items");
+
+createXNodeUIMethod(xnodeui.Autocomplete, "destroy");
+createXNodeUIMethod(xnodeui.Autocomplete, "disable");
+createXNodeUIMethod(xnodeui.Autocomplete, "enable");
+createXNodeUIMethod(xnodeui.Autocomplete, "instance");
+createXNodeUIMethod(xnodeui.Autocomplete, "option");
+createXNodeUIMethod(xnodeui.Autocomplete, "refresh");
+createXNodeUIMethod(xnodeui.Autocomplete, "widget");
+
+/**
  * Button class.
  * @class xnodeui.Button
  */
@@ -123,29 +186,6 @@ createXNodeUIMethod(xnodeui.Slider, "widget");
 // These shadows properties, so let's leave them out.
 //createXNodeUIMethod(xnodeui.Slider, "value");
 //createXNodeUIMethod(xnodeui.Slider, "values");
-
-/**
- * Accordion class.
- * @class Accordion
- */
-xnodeui.Accordion = createExtendedXNodeUIElement("accordion");
-
-createXNodeUIProperty(xnodeui.Accordion, "active");
-createXNodeUIProperty(xnodeui.Accordion, "animate");
-createXNodeUIProperty(xnodeui.Accordion, "collapsible");
-createXNodeUIProperty(xnodeui.Accordion, "disabled");
-createXNodeUIProperty(xnodeui.Accordion, "event");
-createXNodeUIProperty(xnodeui.Accordion, "header");
-createXNodeUIProperty(xnodeui.Accordion, "heightStyle");
-createXNodeUIProperty(xnodeui.Accordion, "icons");
-
-createXNodeUIMethod(xnodeui.Accordion, "destroy");
-createXNodeUIMethod(xnodeui.Accordion, "disable");
-createXNodeUIMethod(xnodeui.Accordion, "enable");
-createXNodeUIMethod(xnodeui.Accordion, "instance");
-createXNodeUIMethod(xnodeui.Accordion, "option");
-createXNodeUIMethod(xnodeui.Accordion, "refresh");
-createXNodeUIMethod(xnodeui.Accordion, "widget")
 
 /**
  * Tabs class.
