@@ -130,10 +130,44 @@ createXNodeUIMethod(xnodeui.Slider, "widget");
  */
 xnodeui.Accordion = createExtendedXNodeUIElement("accordion");
 
+createXNodeUIProperty(xnodeui.Accordion, "active");
+createXNodeUIProperty(xnodeui.Accordion, "animate");
+createXNodeUIProperty(xnodeui.Accordion, "collapsible");
+createXNodeUIProperty(xnodeui.Accordion, "disabled");
+createXNodeUIProperty(xnodeui.Accordion, "event");
+createXNodeUIProperty(xnodeui.Accordion, "header");
+createXNodeUIProperty(xnodeui.Accordion, "heightStyle");
+createXNodeUIProperty(xnodeui.Accordion, "icons");
+
+createXNodeUIMethod(xnodeui.Accordion, "destroy");
+createXNodeUIMethod(xnodeui.Accordion, "disable");
+createXNodeUIMethod(xnodeui.Accordion, "enable");
+createXNodeUIMethod(xnodeui.Accordion, "instance");
+createXNodeUIMethod(xnodeui.Accordion, "option");
+createXNodeUIMethod(xnodeui.Accordion, "refresh");
+createXNodeUIMethod(xnodeui.Accordion, "widget")
+
 /**
  * Tabs class.
  * @class xnodeui.Tabs
  */
 xnodeui.Tabs = createExtendedXNodeUIElement("tabs");
+
+createXNodeUIProperty(xnodeui.Tabs, "active");
+createXNodeUIProperty(xnodeui.Tabs, "collapsible");
+createXNodeUIProperty(xnodeui.Tabs, "disabled");
+createXNodeUIProperty(xnodeui.Tabs, "event");
+createXNodeUIProperty(xnodeui.Tabs, "heightStyle");
+createXNodeUIProperty(xnodeui.Tabs, "hide");
+createXNodeUIProperty(xnodeui.Tabs, "show");
+
+createXNodeUIMethod(xnodeui.Tabs, "destroy");
+createXNodeUIMethod(xnodeui.Tabs, "disable");
+createXNodeUIMethod(xnodeui.Tabs, "enable");
+createXNodeUIMethod(xnodeui.Tabs, "instance");
+createXNodeUIMethod(xnodeui.Tabs, "load");
+createXNodeUIMethod(xnodeui.Tabs, "option");
+createXNodeUIMethod(xnodeui.Tabs, "refresh");
+createXNodeUIMethod(xnodeui.Tabs, "widget")
 
 module.exports = xnodeui;

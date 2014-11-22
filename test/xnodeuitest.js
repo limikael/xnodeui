@@ -9,20 +9,20 @@ $(document).ready(function() {
 	d.style.left = "10px";
 	d.style.right = "10px";
 	d.style.top = "10px";
-	d.style.bottom = "100px";
+	d.style.bottom = "10px";
 	document.body.appendChild(d);
 
-	/* var a = new xnodeui.Accordion();
+	var a = new xnodeui.Accordion();
 	a.appendChild(new xnode.Div("hello"));
 	a.appendChild(new xnode.Div("some content...<br/>blalabl"));
 	a.appendChild(new xnode.Div("hello 2"));
 	a.appendChild(new xnode.Div("some more content...<br/>blalabl and so on...<br/>blalabl and so on...<br/>blalabl and so on...<br/>"));
 
-	a.option("heightStyle", "fill");
-	a.option("collapsible", false);
+	a.heightStyle = "fill";
+	a.collapsible = false;
 
 	d.appendChild(a);
-	a.jqueryElement.accordion("refresh");*/
+	a.refresh();
 
 	/*var t = new xnodeui.Tabs();
 
@@ -49,12 +49,12 @@ $(document).ready(function() {
 
 	t.option("active", 1);*/
 
-	var b = new xnodeui.Button();
+	//var b = new xnodeui.Button();
 
 	//	b.innerHTML="hello";
 
-	b.label = "Hello";
-/*	console.log("label: " + b.label);
+	//b.label = "Hello";
+	/*	console.log("label: " + b.label);
 
 	b.disabled = true;*/
 
@@ -63,23 +63,21 @@ $(document).ready(function() {
 	//	console.log(b.label);
 	//	b.label="Hello world";
 	//	b.option("label", "hello");
-	d.appendChild(b);
+	/*	d.appendChild(b);
 
 	var s=new xnodeui.Slider();
 
 	s.on("slide",function() {
 		console.log("slidechange");
-	})
+	})*/
 
-/*	s.jqueryElement.on("slidechange",function() {
+	/*	s.jqueryElement.on("slidechange",function() {
 		console.log("change");
 	});*/
 
-/*	s.on("change",function() {
+	/*	s.on("change",function() {
 		console.log("change");
 	});*/
 
 	d.appendChild(s);
-
-
 });
