@@ -2,56 +2,42 @@ var xnode = require("xnode");
 var inherits = require("inherits");
 var xnodeui = {};
 
-/*
- * Base widget class.
- */
-function XNodeUIBaseWidget(jqueryuiType, content) {
-	xnode.Div.call(this);
-
-	if (content)
-		this.appendChild(content);
-
-	this.jqueryuiType = jqueryuiType;
-	this.jqueryElement = $(this.node);
-	this.jqueryElement[this.jqueryuiType]();
-}
-
-inherits(XNodeUIBaseWidget, xnode.Div);
-
-/**
- * Override addEventListener to also listen for component events.
- * @method addEventListener
- */
-XNodeUIBaseWidget.prototype.addEventListener = function(e, f) {
-	xnode.Div.prototype.addEventListener.call(this, e, f);
-	this.jqueryElement.on(e, f);
-}
-
-/**
- * Override removeEventListener to also stop listening for component events.
- * @method removeEventListener
- */
-XNodeUIBaseWidget.prototype.removeEventListener = function(e, f) {
-	xnode.Div.prototype.removeEventListener.call(this, e, f);
-	this.jqueryElement.off(e, f);
-}
-
-/*
- * Event listener function aliases.
- */
-XNodeUIBaseWidget.prototype.on = XNodeUIBaseWidget.prototype.addEventListener;
-XNodeUIBaseWidget.prototype.off = XNodeUIBaseWidget.prototype.removeEventListener;
-
 /**
  * Create a class that extends a jquery ui widget.
  * @method createExtendedXNodeUIElement
  */
-function createExtendedXNodeUIElement(jqueryuiType) {
+function createExtendedXNodeUIElement(jqueryuiType, baseClass) {
+	if (!baseClass)
+		baseClass = xnode.Div;
+
 	function cls() {
-		XNodeUIBaseWidget.call(this, jqueryuiType);
+		baseClass.call(this);
+
+		switch (jqueryuiType) {
+			case "tabs":
+				this.ul = new xnode.Ul();
+				break;
+		}
+
+		this.jqueryuiType = jqueryuiType;
+		this.jqueryElement = $(this.node);
+		this.jqueryElement[this.jqueryuiType]();
 	}
 
-	inherits(cls, XNodeUIBaseWidget);
+	inherits(cls, baseClass);
+
+	cls.prototype.addEventListener = function(e, f) {
+		xnode.Div.prototype.addEventListener.call(this, e, f);
+		this.jqueryElement.on(e, f);
+	}
+
+	cls.prototype.removeEventListener = function(e, f) {
+		xnode.Div.prototype.removeEventListener.call(this, e, f);
+		this.jqueryElement.off(e, f);
+	}
+
+	cls.prototype.on = cls.prototype.addEventListener;
+	cls.prototype.off = cls.prototype.removeEventListener;
 
 	return cls;
 }
@@ -94,8 +80,9 @@ function createXNodeUIMethod(cls, methodName) {
 
 /**
  * Button class.
+ * @class xnodeui.Button
  */
-xnodeui.Button = createExtendedXNodeUIElement("button");
+xnodeui.Button = createExtendedXNodeUIElement("button", xnode.Button);
 
 createXNodeUIProperty(xnodeui.Button, "disabled");
 createXNodeUIProperty(xnodeui.Button, "icons");
@@ -112,6 +99,7 @@ createXNodeUIMethod(xnodeui.Button, "widget");
 
 /**
  * Slider class.
+ * @class xnodeui.Slider
  */
 xnodeui.Slider = createExtendedXNodeUIElement("slider");
 
@@ -140,33 +128,12 @@ createXNodeUIMethod(xnodeui.Slider, "widget");
  * Accordion class.
  * @class Accordion
  */
-xnodeui.Accordion = function() {
-	XNodeUIBaseWidget.call(this, "accordion");
-}
-
-inherits(xnodeui.Accordion, XNodeUIBaseWidget);
-
-/**
- * Button class.
- * @class xnodeui.Button
- */
-/*xnodeui.Button = function() {
-	XNodeUIBaseWidget.call(this, "button");
-}
-
-inherits(xnodeui.Button, XNodeUIBaseWidget);*/
+xnodeui.Accordion = createExtendedXNodeUIElement("accordion");
 
 /**
  * Tabs class.
  * @class xnodeui.Tabs
  */
-xnodeui.Tabs = function() {
-	this.ul = new xnode.Ul();
-
-	XNodeUIBaseWidget.call(this, "tabs", this.ul);
-}
-
-inherits(xnodeui.Tabs, XNodeUIBaseWidget);
-
+xnodeui.Tabs = createExtendedXNodeUIElement("tabs");
 
 module.exports = xnodeui;
