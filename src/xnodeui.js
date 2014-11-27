@@ -103,22 +103,15 @@ function createXNodeUIMethods(cls, methodNames) {
  */
 xnodeui.Accordion = createExtendedXNodeUIElement("accordion");
 
-createXNodeUIProperty(xnodeui.Accordion, "active");
-createXNodeUIProperty(xnodeui.Accordion, "animate");
-createXNodeUIProperty(xnodeui.Accordion, "collapsible");
-createXNodeUIProperty(xnodeui.Accordion, "disabled");
-createXNodeUIProperty(xnodeui.Accordion, "event");
-createXNodeUIProperty(xnodeui.Accordion, "header");
-createXNodeUIProperty(xnodeui.Accordion, "heightStyle");
-createXNodeUIProperty(xnodeui.Accordion, "icons");
+createXNodeUIProperties(xnodeui.Accordion, [
+	"active", "animate", "collapsible", "disabled",
+	"event", "header", "heightStyle", "icons"
+]);
 
-createXNodeUIMethod(xnodeui.Accordion, "destroy");
-createXNodeUIMethod(xnodeui.Accordion, "disable");
-createXNodeUIMethod(xnodeui.Accordion, "enable");
-createXNodeUIMethod(xnodeui.Accordion, "instance");
-createXNodeUIMethod(xnodeui.Accordion, "option");
-createXNodeUIMethod(xnodeui.Accordion, "refresh");
-createXNodeUIMethod(xnodeui.Accordion, "widget")
+createXNodeUIMethods(xnodeui.Accordion, [
+	"destroy", "disable", "enable", "instance",
+	"option", "refresh", "widget"
+]);
 
 /**
  * Autocomplete class.
@@ -126,22 +119,15 @@ createXNodeUIMethod(xnodeui.Accordion, "widget")
  */
 xnodeui.Autocomplete = createExtendedXNodeUIElement("autocomplete");
 
-createXNodeUIProperty(xnodeui.Autocomplete, "appendTo");
-createXNodeUIProperty(xnodeui.Autocomplete, "autoFocus");
-createXNodeUIProperty(xnodeui.Autocomplete, "delay");
-createXNodeUIProperty(xnodeui.Autocomplete, "disabled");
-createXNodeUIProperty(xnodeui.Autocomplete, "minLength");
-createXNodeUIProperty(xnodeui.Autocomplete, "position");
-createXNodeUIProperty(xnodeui.Autocomplete, "source");
+createXNodeUIProperties(xnodeui.Autocomplete, [
+	"appendTo", "autoFocus", "delay", "disabled",
+	"minLength", "position", "source"
+]);
 
-createXNodeUIMethod(xnodeui.Autocomplete, "close");
-createXNodeUIMethod(xnodeui.Autocomplete, "destroy");
-createXNodeUIMethod(xnodeui.Autocomplete, "disable");
-createXNodeUIMethod(xnodeui.Autocomplete, "enable");
-createXNodeUIMethod(xnodeui.Autocomplete, "instance");
-createXNodeUIMethod(xnodeui.Autocomplete, "option");
-createXNodeUIMethod(xnodeui.Autocomplete, "search")
-createXNodeUIMethod(xnodeui.Autocomplete, "widget")
+createXNodeUIMethods(xnodeui.Autocomplete, [
+	"close", "destroy", "disable", "enable",
+	"instance", "option", "search", "widget"
+]);
 
 /**
  * Button class.
@@ -149,53 +135,29 @@ createXNodeUIMethod(xnodeui.Autocomplete, "widget")
  */
 xnodeui.Button = createExtendedXNodeUIElement("button", xnode.Button);
 
-createXNodeUIProperty(xnodeui.Button, "disabled");
-createXNodeUIProperty(xnodeui.Button, "icons");
-createXNodeUIProperty(xnodeui.Button, "label");
-createXNodeUIProperty(xnodeui.Button, "text");
+createXNodeUIProperties(xnodeui.Button, [
+	"disabled", "icons", "label", "text"
+]);
 
-createXNodeUIMethod(xnodeui.Button, "destroy");
-createXNodeUIMethod(xnodeui.Button, "disable");
-createXNodeUIMethod(xnodeui.Button, "enable");
-createXNodeUIMethod(xnodeui.Button, "instance");
-createXNodeUIMethod(xnodeui.Button, "option");
-createXNodeUIMethod(xnodeui.Button, "refresh");
-createXNodeUIMethod(xnodeui.Button, "widget");
+createXNodeUIMethods(xnodeui.Button, [
+	"destroy", "disable", "enable", "instance",
+	"option", "refresh", "widget"
+]);
 
 /**
  * Buttonset class.
  * @class xnodeui.Buttonset
  */
-xnodeui.Buttonset = createExtendedXNodeUIElement("buttonset", xnode.Div);
-
-createXNodeUIProperty(xnodeui.Buttonset, "disabled");
-createXNodeUIProperty(xnodeui.Buttonset, "items");
-
-createXNodeUIMethod(xnodeui.Autocomplete, "destroy");
-createXNodeUIMethod(xnodeui.Autocomplete, "disable");
-createXNodeUIMethod(xnodeui.Autocomplete, "enable");
-createXNodeUIMethod(xnodeui.Autocomplete, "instance");
-createXNodeUIMethod(xnodeui.Autocomplete, "option");
-createXNodeUIMethod(xnodeui.Autocomplete, "refresh");
-createXNodeUIMethod(xnodeui.Autocomplete, "widget");
-
-/**
- * Buttonset class.
- * @class xnodeui.Buttonset
- */
-xnodeui.Buttonset = createExtendedXNodeUIElement("buttonset", xnode.Div);
+xnodeui.Buttonset = createExtendedXNodeUIElement("buttonset");
 
 createXNodeUIProperties(xnodeui.Buttonset, [
 	"disabled", "items"
 ]);
 
-createXNodeUIMethod(xnodeui.Autocomplete, "destroy");
-createXNodeUIMethod(xnodeui.Autocomplete, "disable");
-createXNodeUIMethod(xnodeui.Autocomplete, "enable");
-createXNodeUIMethod(xnodeui.Autocomplete, "instance");
-createXNodeUIMethod(xnodeui.Autocomplete, "option");
-createXNodeUIMethod(xnodeui.Autocomplete, "refresh");
-createXNodeUIMethod(xnodeui.Autocomplete, "widget");
+createXNodeUIMethods(xnodeui.Autocomplete, [
+	"destroy", "disable", "enable", "instance",
+	"option", "refresh", "widget"
+]);
 
 /**
  * Slider class.
