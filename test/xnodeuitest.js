@@ -1,6 +1,54 @@
 var xnode = require("xnode");
 var xnodeui = require("../src/xnodeui");
 
+function createButtonsTab() {
+	var tab = new xnode.Div();
+	tab.id = "buttons";
+
+	var button = new xnodeui.Button();
+	button.label = "Testing";
+	tab.appendChild(button);
+
+	var disabled = new xnodeui.Button();
+	disabled.label = "Disabled";
+	disabled.disable();
+	tab.appendChild(disabled);
+
+	return tab;
+}
+
+function createSlidersTab() {
+	var tab = new xnode.Div();
+	tab.id = "sliders";
+
+	var slider = new xnodeui.Slider();
+
+	tab.appendChild(slider);
+
+	return tab;
+}
+
+function createAccordionTab() {
+	var a = new xnodeui.Accordion();
+	a.id = "accordion";
+
+	a.appendChild(new xnode.Div("hello"));
+	a.appendChild(new xnode.Div("some content...<br/>blalabl"));
+	a.appendChild(new xnode.Div("hello 2"));
+	a.appendChild(new xnode.Div("some more content...<br/>blalabl and so on...<br/>blalabl and so on...<br/>blalabl and so on...<br/>"));
+
+	a.heightStyle = "fill";
+	a.collapsible = false;
+
+	a.style.position = "absolute";
+	a.style.top = "40px";
+	a.style.bottom = "10px";
+	a.style.left = "0";
+	a.style.right = "0";
+
+	return a;
+}
+
 $(document).ready(function() {
 
 	var d = new xnode.Div();
@@ -12,72 +60,33 @@ $(document).ready(function() {
 	d.style.bottom = "10px";
 	document.body.appendChild(d);
 
-	var a = new xnodeui.Accordion();
-	a.appendChild(new xnode.Div("hello"));
-	a.appendChild(new xnode.Div("some content...<br/>blalabl"));
-	a.appendChild(new xnode.Div("hello 2"));
-	a.appendChild(new xnode.Div("some more content...<br/>blalabl and so on...<br/>blalabl and so on...<br/>blalabl and so on...<br/>"));
+	var tabs = new xnodeui.Tabs();
 
-	a.heightStyle = "fill";
-	a.collapsible = false;
-
-	d.appendChild(a);
-	a.refresh();
-
-	/*var t = new xnodeui.Tabs();
-
-	t.style.position = "absolute";
-	t.style.height = "100%";
-	t.style.left = "0";
-	t.style.right = "0";
+	tabs.style.position = "absolute";
+	tabs.style.top = "0";
+	tabs.style.bottom = "0";
+	tabs.style.left = "0";
+	tabs.style.right = "0";
 
 	//var ul=new xnode.Ul();
-	t.ul.appendChild(new xnode.Li("<a href='#fragment1'><span>test</span></a>"));
-	t.ul.appendChild(new xnode.Li("<a href='#fragment2'><span>test</span></a>"));
+	tabs.ul.appendChild(new xnode.Li("<a href='#buttons'><span>Buttons</span></a>"));
+	tabs.appendChild(createButtonsTab());
 
-	var c;
-	c = new xnode.Div("hello");
-	c.id = "fragment1";
-	t.appendChild(c);
+	tabs.ul.appendChild(new xnode.Li("<a href='#sliders'><span>Sliders</span></a>"));
+	tabs.appendChild(createSlidersTab());
 
-	c = new xnode.Div("hello again");
-	c.id = "fragment2";
-	t.appendChild(c);
+	tabs.ul.appendChild(new xnode.Li("<a href='#accordion'><span>Accordion</span></a>"));
+	var accordion = createAccordionTab();
+	tabs.appendChild(accordion);
 
-	t.jqueryElement.tabs("refresh");
-	d.appendChild(t);
+	d.appendChild(tabs);
+	tabs.refresh();
+	tabs.active = 0;
 
-	t.option("active", 1);*/
+	accordion.refresh();
 
-	//var b = new xnodeui.Button();
-
-	//	b.innerHTML="hello";
-
-	//b.label = "Hello";
-	/*	console.log("label: " + b.label);
-
-	b.disabled = true;*/
-
-	//	b.disable();
-
-	//	console.log(b.label);
-	//	b.label="Hello world";
-	//	b.option("label", "hello");
-	/*	d.appendChild(b);
-
-	var s=new xnodeui.Slider();
-
-	s.on("slide",function() {
-		console.log("slidechange");
-	})*/
-
-	/*	s.jqueryElement.on("slidechange",function() {
-		console.log("change");
-	});*/
-
-	/*	s.on("change",function() {
-		console.log("change");
-	});*/
-
-	d.appendChild(s);
+	$(window).resize(function() {
+		//tabs.refresh();
+		accordion.refresh();
+	});
 });
