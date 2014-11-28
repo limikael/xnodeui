@@ -192,4 +192,33 @@ createXNodeUIMethods(xnodeui.Tabs, [
 	"load", "option", "refresh", "widget"
 ]);
 
+/**
+ * Datepicker class.
+ * @class xnodeui.Datepicker
+ */
+xnodeui.Datepicker = createExtendedXNodeUIElement("datepicker");
+
+createXNodeUIProperties(xnodeui.Datepicker, [
+	"altField", "altFormat", "appendText", "autoSize",
+	"beforeShow", "beforeShowDay", "buttonImage", "buttonImageOnly",
+	"buttonText", "calculateWeek", "changeMonth", "changeYear",
+	"closeText", "constrainInput", "currentText", "dateFormat",
+	"dayNames", "dayNamesMin", "dayNamesShort", "defaultDate",
+	"duration", "firstDay", "gotoCurrent", "hideIfNoPrevNext",
+	"isRTL", "maxDate", "minDate", "monthNames",
+	"monthNamesShort", "navigationAsDateFormat", "nextText",
+	"numberOfMonths", "onChangeMonthYear",
+	"onClose", "onSelect", "prevText", "selectOtherMonths",
+	"shortYearCutoff", "showAnim", "showButtonPanel", "showCurrentAtPos",
+	"showMonthAfterYear", "showOn", "showOptions", "showOtherMonths",
+	"showWeek", "stepMonths", "weekHeader", "yearRange",
+	"yearSuffix"
+]);
+
+createXNodeUIMethods(xnodeui.Datepicker, [
+	"destroy", "dialog", "getDate", "hide",
+	"isDisabled", "option", "refresh", "setDate",
+	"show", "widget"
+]);
+
 module.exports = xnodeui;

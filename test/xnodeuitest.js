@@ -49,6 +49,17 @@ function createAccordionTab() {
 	return a;
 }
 
+function createDatepickerTab() {
+	var tab = new xnode.Div();
+	tab.id = "datepicker";
+
+	var datepicker = new xnodeui.Datepicker();
+
+	tab.appendChild(datepicker);
+
+	return tab;
+}
+
 $(document).ready(function() {
 
 	var d = new xnode.Div();
@@ -78,6 +89,9 @@ $(document).ready(function() {
 	tabs.ul.appendChild(new xnode.Li("<a href='#accordion'><span>Accordion</span></a>"));
 	var accordion = createAccordionTab();
 	tabs.appendChild(accordion);
+
+	tabs.ul.appendChild(new xnode.Li("<a href='#datepicker'><span>Datepicker</span></a>"));
+	tabs.appendChild(createDatepickerTab());
 
 	d.appendChild(tabs);
 	tabs.refresh();
