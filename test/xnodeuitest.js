@@ -86,18 +86,18 @@ function createMenuTab() {
 	tab.id = "menu";
 
 	var menu = new xnodeui.Menu();
-	menu.style.width="200px";
+	menu.style.width = "200px";
 
 	menu.appendChild(new xnode.Li("hello"));
 	menu.appendChild(new xnode.Li("hello 2"));
 	menu.appendChild(new xnode.Li("hello 3"));
 	menu.appendChild(new xnode.Li("hello 4"));
 
-	var sub=new xnode.Li("has sub");
+	var sub = new xnode.Li("has sub");
 	menu.appendChild(sub);
 
-	var subul=new xnode.Ul();
-	subul.style.width="200px";
+	var subul = new xnode.Ul();
+	subul.style.width = "200px";
 	sub.appendChild(subul);
 
 	subul.appendChild(new xnode.Li("sub"));
@@ -108,6 +108,27 @@ function createMenuTab() {
 	tab.appendChild(menu);
 
 	menu.refresh();
+
+	return tab;
+}
+
+function createProgressbarTab() {
+	var tab = new xnode.Div();
+	tab.id = "progressbar";
+
+	var progressbar = new xnodeui.Progressbar();
+
+	progressbar.value = 50;
+	progressbar.max = 100;
+
+	tab.appendChild(progressbar);
+
+	var inprogressbar = new xnodeui.Progressbar();
+
+	inprogressbar.style.marginTop = "10px";
+	inprogressbar.value = false;
+
+	tab.appendChild(inprogressbar);
 
 	return tab;
 }
@@ -150,6 +171,9 @@ $(document).ready(function() {
 
 	tabs.ul.appendChild(new xnode.Li("<a href='#menu'><span>Menu</span></a>"));
 	tabs.appendChild(createMenuTab());
+
+	tabs.ul.appendChild(new xnode.Li("<a href='#progressbar'><span>Progressbar</span></a>"));
+	tabs.appendChild(createProgressbarTab());
 
 	d.appendChild(tabs);
 	tabs.refresh();

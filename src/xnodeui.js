@@ -259,4 +259,19 @@ createXNodeUIMethods(xnodeui.Menu, [
 	"refresh", "select", "widget"
 ]);
 
+/**
+ * Progressbar class.
+ * @class xnodeui.Progressbar
+ */
+xnodeui.Progressbar = createExtendedXNodeUIElement("progressbar");
+
+createXNodeUIProperties(xnodeui.Progressbar, [
+	"disabled", "max", "value"
+]);
+
+createXNodeUIMethods(xnodeui.Progressbar, [
+	"destroy", "disable", "enable", "instance",
+	"option", "widget" /*, "value"*/
+]);
+
 module.exports = xnodeui;
