@@ -274,4 +274,39 @@ createXNodeUIMethods(xnodeui.Progressbar, [
 	"option", "widget" /*, "value"*/
 ]);
 
+/**
+ * Selectmenu class.
+ * @class xnodeui.Selectmenu
+ */
+xnodeui.Selectmenu = createExtendedXNodeUIElement("selectmenu", xnode.Select);
+
+createXNodeUIProperties(xnodeui.Selectmenu, [
+	"appendTo", "disabled", "icons", "position",
+	"width"
+]);
+
+createXNodeUIMethods(xnodeui.Selectmenu, [
+	"close", "destroy", "disable", "enable",
+	"instance", "menuWidget", "open", "option",
+	"refresh", "widget"
+]);
+
+/**
+ * Spinner class.
+ * @class xnodeui.Spinner
+ */
+xnodeui.Spinner = createExtendedXNodeUIElement("spinner", xnode.Input);
+
+createXNodeUIProperties(xnodeui.Spinner, [
+	"culture", "disabled", "icons", "incremental",
+	"max", "min", "numberFormat", "page",
+	"step"
+]);
+
+createXNodeUIMethods(xnodeui.Spinner, [
+	"destroy", "disable", "enable", "instance",
+	"isValid", "option", "pageDown", "pageUp",
+	"stepDown", "stepUp", "value", "widget"
+]);
+
 module.exports = xnodeui;

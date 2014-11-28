@@ -133,6 +133,38 @@ function createProgressbarTab() {
 	return tab;
 }
 
+function createSelectmenuTab() {
+	var tab = new xnode.Div();
+	tab.id = "selectmenu";
+
+	var selectmenu = new xnodeui.Selectmenu();
+
+	selectmenu.style.width = "200px";
+
+	selectmenu.appendChild(new xnode.Option("hello"));
+	selectmenu.appendChild(new xnode.Option("world"));
+
+	//selectmenu.open();
+
+	tab.appendChild(selectmenu);
+
+	selectmenu.style.display = "block";
+	selectmenu.refresh();
+
+	return tab;
+}
+
+function createSpinnerTab() {
+	var tab = new xnode.Div();
+	tab.id = "spinner";
+
+	var spinner = new xnodeui.Spinner();
+
+	tab.appendChild(spinner);
+
+	return tab;
+}
+
 $(document).ready(function() {
 
 	var d = new xnode.Div();
@@ -152,16 +184,12 @@ $(document).ready(function() {
 	tabs.style.left = "0";
 	tabs.style.right = "0";
 
-	//var ul=new xnode.Ul();
-	tabs.ul.appendChild(new xnode.Li("<a href='#buttons'><span>Buttons</span></a>"));
-	tabs.appendChild(createButtonsTab());
-
-	tabs.ul.appendChild(new xnode.Li("<a href='#sliders'><span>Sliders</span></a>"));
-	tabs.appendChild(createSlidersTab());
-
 	tabs.ul.appendChild(new xnode.Li("<a href='#accordion'><span>Accordion</span></a>"));
 	var accordion = createAccordionTab();
 	tabs.appendChild(accordion);
+
+	tabs.ul.appendChild(new xnode.Li("<a href='#buttons'><span>Buttons</span></a>"));
+	tabs.appendChild(createButtonsTab());
 
 	tabs.ul.appendChild(new xnode.Li("<a href='#datepicker'><span>Datepicker</span></a>"));
 	tabs.appendChild(createDatepickerTab());
@@ -174,6 +202,15 @@ $(document).ready(function() {
 
 	tabs.ul.appendChild(new xnode.Li("<a href='#progressbar'><span>Progressbar</span></a>"));
 	tabs.appendChild(createProgressbarTab());
+
+	tabs.ul.appendChild(new xnode.Li("<a href='#selectmenu'><span>Selectmenu</span></a>"));
+	tabs.appendChild(createSelectmenuTab());
+
+	tabs.ul.appendChild(new xnode.Li("<a href='#sliders'><span>Sliders</span></a>"));
+	tabs.appendChild(createSlidersTab());
+
+	tabs.ul.appendChild(new xnode.Li("<a href='#spinner'><span>Spinner</span></a>"));
+	tabs.appendChild(createSpinnerTab());
 
 	d.appendChild(tabs);
 	tabs.refresh();
