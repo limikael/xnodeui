@@ -79,7 +79,37 @@ function createDialogTab() {
 	})
 
 	return tab;
+}
 
+function createMenuTab() {
+	var tab = new xnode.Div();
+	tab.id = "menu";
+
+	var menu = new xnodeui.Menu();
+	menu.style.width="200px";
+
+	menu.appendChild(new xnode.Li("hello"));
+	menu.appendChild(new xnode.Li("hello 2"));
+	menu.appendChild(new xnode.Li("hello 3"));
+	menu.appendChild(new xnode.Li("hello 4"));
+
+	var sub=new xnode.Li("has sub");
+	menu.appendChild(sub);
+
+	var subul=new xnode.Ul();
+	subul.style.width="200px";
+	sub.appendChild(subul);
+
+	subul.appendChild(new xnode.Li("sub"));
+	subul.appendChild(new xnode.Li("sub 2"));
+	subul.appendChild(new xnode.Li("sub 3"));
+	subul.appendChild(new xnode.Li("sub 4"));
+
+	tab.appendChild(menu);
+
+	menu.refresh();
+
+	return tab;
 }
 
 $(document).ready(function() {
@@ -117,6 +147,9 @@ $(document).ready(function() {
 
 	tabs.ul.appendChild(new xnode.Li("<a href='#dialog'><span>Dialog</span></a>"));
 	tabs.appendChild(createDialogTab());
+
+	tabs.ul.appendChild(new xnode.Li("<a href='#menu'><span>Menu</span></a>"));
+	tabs.appendChild(createMenuTab());
 
 	d.appendChild(tabs);
 	tabs.refresh();

@@ -240,4 +240,23 @@ createXNodeUIMethods(xnodeui.Dialog, [
 	"moveToTop", "open", "option", "widget"
 ]);
 
+/**
+ * Menu class.
+ * @class xnodeui.Menu
+ */
+xnodeui.Menu = createExtendedXNodeUIElement("menu", xnode.Ul);
+
+createXNodeUIProperties(xnodeui.Menu, [
+	"disabled", "icons", "items", "menus",
+	"position", "role"
+]);
+
+createXNodeUIMethods(xnodeui.Menu, [
+	"blur", "collapse", "collapseAll", "destroy",
+	"disable", "enable", "expand", "focus",
+	"instance", "isFirstItem", "isLastItem", "next",
+	"nextPage", "option", "previous", "previousPage",
+	"refresh", "select", "widget"
+]);
+
 module.exports = xnodeui;
