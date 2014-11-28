@@ -221,4 +221,23 @@ createXNodeUIMethods(xnodeui.Datepicker, [
 	"show", "widget"
 ]);
 
+/**
+ * Dialog class.
+ * @class xnodeui.Dialog
+ */
+xnodeui.Dialog = createExtendedXNodeUIElement("dialog");
+
+createXNodeUIProperties(xnodeui.Dialog, [
+	"appendTo", "autoOpen", "buttons", "closeOnEscape",
+	"closeText", "dialogClass", "draggable", "height",
+	"hide", "maxHeight", "maxWidth", "minHeight",
+	"minWidth", "modal", "position", "resizable",
+	"show", "title", "width"
+]);
+
+createXNodeUIMethods(xnodeui.Dialog, [
+	"close", "destroy", "instance", "isOpen",
+	"moveToTop", "open", "option", "widget"
+]);
+
 module.exports = xnodeui;

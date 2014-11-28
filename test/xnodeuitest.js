@@ -60,6 +60,28 @@ function createDatepickerTab() {
 	return tab;
 }
 
+function createDialogTab() {
+	var tab = new xnode.Div();
+	tab.id = "dialog";
+
+	var dialog = new xnodeui.Dialog();
+	dialog.title = "Hello World";
+	dialog.appendChild(new xnode.Div("hello world"));
+	dialog.modal = true;
+	dialog.close();
+
+	var button = new xnodeui.Button();
+	button.label = "Open dialog";
+	tab.appendChild(button);
+
+	button.on("click", function() {
+		dialog.open();
+	})
+
+	return tab;
+
+}
+
 $(document).ready(function() {
 
 	var d = new xnode.Div();
@@ -92,6 +114,9 @@ $(document).ready(function() {
 
 	tabs.ul.appendChild(new xnode.Li("<a href='#datepicker'><span>Datepicker</span></a>"));
 	tabs.appendChild(createDatepickerTab());
+
+	tabs.ul.appendChild(new xnode.Li("<a href='#dialog'><span>Dialog</span></a>"));
+	tabs.appendChild(createDialogTab());
 
 	d.appendChild(tabs);
 	tabs.refresh();
