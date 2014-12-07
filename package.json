@@ -1,8 +1,8 @@
 {
   "name": "xnodeui",
-  "version": "0.0.1",
-  "description": "",
-  "main": "Gruntfile.js",
+  "version": "0.0.2",
+  "description": "xnodeui",
+  "main": "src/xnodeui.js",
   "directories": {
     "test": "test"
   },
